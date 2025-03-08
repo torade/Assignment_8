@@ -12,6 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
     private EditText firstNo, secondNo;
     private TextView result;
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         double x = Double.parseDouble(firstNo.getText().toString());
         double y = Double.parseDouble(secondNo.getText().toString());
         double sum = x + y;
-        result.setText(String.valueOf(sum));
+        result.setText(String.format(Locale.US,"%.2f", sum));
     }
     // difference
     public void subtract(View view)
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         double x = Double.parseDouble(firstNo.getText().toString());
         double y = Double.parseDouble(secondNo.getText().toString());
         double difference = x - y;
-        result.setText(String.valueOf(difference));
+        result.setText(String.format(Locale.US,"%.2f", difference));
     }
 // multiplication
     public void multiply(View view)
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         double x = Double.parseDouble(firstNo.getText().toString());
         double y = Double.parseDouble(secondNo.getText().toString());
         double multiplication = x * y;
-        result.setText(String.valueOf(multiplication));
+        result.setText(String.format(Locale.US, "%.2f", multiplication));
     }
     // division
     public void divide(View view)
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         else
         {
             double division = x / y;
-            result.setText(String.valueOf(division));
+            result.setText(String.format(Locale.US, "%.2f", division));
         }
     }
 
